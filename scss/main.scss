@@ -580,6 +580,67 @@ body{
       }
     }
   }
+}
+
+//arrows
+.arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .prev {
+    margin-right: 8px;
+    background-color: $main-black;
+    svg {
+      fill: $white;
+    }
+  }
+
+  .next {
+    transform: rotate(180deg);
+    background-color: $main-black;
+    svg {
+      fill: $white;
+    }
+  }
+
+  .prev,
+  .next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $main-black;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.slick-disabled {
+      background-color: $white;
+      .arrow-slider {
+        svg {
+          fill: $main-black;
+        }
+      }
+    }
+
+    .arrow-slider {
+      width: 8px;
+      height: 12px;
+    }
+  }
+}
+
+//advantage section
+.advantage-section {
+  padding: 96px 0 0;
+
+  .container {
+    text-align: center;
+  }
 
   .arrows {
     display: flex;
@@ -588,62 +649,165 @@ body{
     
     .prev {
       margin-right: 8px;
-    }
+      background-color: $white;
 
+      svg {
+        fill: $main-black;
+      }
+    }
+  
     .next {
       transform: rotate(180deg);
+      background-color: $white;
+      svg {
+        fill: $main-black;
+      }
     }
-
+  
     .prev,
     .next {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border: 1px solid $main-black;
-      border-radius: 50%;
-
-      &:hover {
-        cursor: pointer;
+      border: 1px solid $white;
+      @include media ('<=768px') {
+        width: 20px;
+        height: 20px;
       }
-
+  
       &.slick-disabled {
-        background-color: $white;
+        background-color: transparent;
         .arrow-slider {
           svg {
-            fill: $main-black;
+            fill: $white;
           }
         }
       }
+    }
+  }
 
-      // &.active-direction {
-      //   background-color: $main-black;
+  .prev-advantage,
+  .next-advantage {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 
-      //   &.slick-disabled {
-      //     background-color: $white;
-      //     .arrow-slider {
-      //       svg {
-      //         fill: $main-black;
-      //       }
-      //     }
-      //   }
+  .prev-advantage {
+    left: 16px;
+    @include media ('<=768px') {
+      left: 4px;
+    }
+  }
 
-      //   .arrow-slider {
-      //     svg {
-      //       fill: $white;
-      //     }
-      //   }
-      // }
+  .next-advantage {
+    right: 16px;
+    @include media ('<=768px') {
+      right: 4px;
+    }
+  }
+}
 
-      .arrow-slider {
-        width: 8px;
-        height: 12px;
+.carousel-block {
+  position: relative;
+}
 
-        svg {
-          fill: $main-black;
-        }
+.carousel-advantage {
+  margin: 0 -16px;
+  .slide {
+    padding: 0 16px;   
+    
+    .link-slide {
+      position: relative;
+      display: flex;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $main-black;
+      opacity: 0.5;
+    }
+
+    .text-block {
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+      padding: 0 32px;
+      text-align: left;
+      color: $white;
+      z-index: 2;
+
+      @include media ('<=480px') {
+        bottom: 16px;
       }
     }
+
+    .title-slide {
+      position: relative;
+      display: inline-flex;
+      margin: 0 0 16px;
+
+      @include media ('<1566px') {
+        font-size: 28px;
+      }
+
+      @include media ('<1366px') {
+        margin: 0 0 8px;
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $green;
+      }
+    }
+    
+    .text-slide {
+      position: relative;
+      font-size: 18px;
+      display: none;
+
+      @include media ('<1566px') {
+        font-size: 14px;
+      }
+
+      @include media ('<=768px') {
+        display: block;
+      }
+    }
+
+    img {
+      @include media ('<=768px') {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.title-section {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  margin: 0 0 48px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: -4px;
+    width: 20px;
+    height: 50px;
+    transform: translate(0, -50%);
+    background-color: $green;
   }
 }

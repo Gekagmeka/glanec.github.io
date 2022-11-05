@@ -19,14 +19,43 @@ function deleteActiveClass(){
 	}
 }
 
+$('.link-slide').hover(
+	function(){
+	$(this).find('.text-slide').fadeIn(300);},
+	function(){
+	$(this).find('.text-slide').fadeOut(300);
+});	
 
 //slider
 $(".carousel").slick({
 	autoplay: true,
 	dots: false,
 	arrows: true,
-	prevArrow: $('.prev'),
-	nextArrow: $('.next'),
+	prevArrow: $('.prev-first-section'),
+	nextArrow: $('.next-first-section'),
 	infinite: false
-	
+});
+
+$(".carousel-advantage").slick({
+	slidesToShow: 3,
+	autoplay: true,
+	dots: false,
+	arrows: true,
+	prevArrow: $('.prev-advantage'),
+	nextArrow: $('.next-advantage'),
+	infinite: false,
+	responsive: [
+		{
+			breakpoint: 1200,
+			settings: {
+				slidesToShow: 2
+			}
+		},
+		{
+			breakpoint: 769,
+			settings: {
+				slidesToShow: 1
+			}
+		}
+	]
 });
