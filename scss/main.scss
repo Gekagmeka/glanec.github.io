@@ -811,3 +811,70 @@ body{
     background-color: $green;
   }
 }
+
+//categories
+.categories-section {
+  padding: 96px 0 0;
+
+  .container {
+    text-align: center;
+  }
+}
+
+.tabs {
+    input[type="radio"] {
+      display: none;
+    }
+    label {
+      padding: 0 16px;
+      display: inline-block;
+      width: 16%;
+    }
+    .ico-living-room {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+    .tab-content {
+      display: none;
+    }
+
+    .title-tab {
+      display: inline-block;
+      border-bottom: 3px solid $white;
+      transition: all 0.3s ease-in;
+    }
+
+    svg {
+      transition: all 0.3s ease-in;
+      fill: $main-black;
+    }
+
+    #tab-btn-1:checked,
+    #tab-btn-2:checked,
+    #tab-btn-3:checked,
+    #tab-btn-4:checked,
+    #tab-btn-5:checked,
+    #tab-btn-6:checked {
+      & + label {
+        .title-tab {
+          border-color: $green;
+        }
+
+        svg {
+          fill: $green;
+        }
+      }
+   }
+
+    #tab-btn-1:checked ~ .tabs-content #content-1,
+    #tab-btn-2:checked ~ .tabs-content #content-2,
+    #tab-btn-3:checked ~ .tabs-content #content-3,
+    #tab-btn-4:checked ~ .tabs-content #content-4,
+    #tab-btn-5:checked ~ .tabs-content #content-5,
+    #tab-btn-6:checked ~ .tabs-content #content-6 {
+      display: block;
+   }
+
+
+}
