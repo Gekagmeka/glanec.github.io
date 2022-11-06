@@ -59,3 +59,56 @@ $(".carousel-advantage").slick({
 		}
 	]
 });
+
+$(window).on('load', () => {
+	const element = $('.slick-carousel');
+	const mediaQuery = window.matchMedia('(max-width: 1023px)');
+  
+	const handleSwitchSlick = ((e) => {
+	  if (e.matches) {
+		element.slick({
+		  infinite: false,
+		  arrows: false,
+		  slidesToShow: 2,
+		  responsive: [
+			{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+		});
+	  } else if (element.hasClass('slick-initialized')) {
+		element.slick('unslick');
+	  }
+	});
+  
+	mediaQuery.addListener(handleSwitchSlick);
+	handleSwitchSlick(mediaQuery);
+  });
+
+// if (window.matchMedia('(max-width: 1023px)').matches) {
+// 	$('.tabs-content .list').slick({
+// 		responsive: [
+// 		{
+// 			breakpoint: 1023,
+// 			settings: {
+// 				slidesToShow: 2
+// 			}
+// 		}
+// 	]
+// 	});
+// }
+
+// const mediaQuery = window.matchMedia('(max-width: 1023px)')
+// function handleTabletChange(e) {
+//   if (e.matches) {
+//     $('.tabs-content .list').slick({
+// 				autoplay: true,
+// 				dots: false
+// 			});
+//   }
+// }
+// mediaQuery.addListener(handleTabletChange)
+// handleTabletChange(mediaQuery)

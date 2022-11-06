@@ -822,6 +822,7 @@ body{
 }
 
 .tabs {
+  padding: 48px 0 0;
     input[type="radio"] {
       display: none;
     }
@@ -876,5 +877,108 @@ body{
       display: block;
    }
 
+   .tabs-content {
+    padding-top: 80px;
+   }
+
+   .tab-sub-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    color: $main-black;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in;
+    .text {
+      font-size: 24px;
+      transition: all 0.2s ease-in;
+    }
+    .price {
+      transition: all 0.2s ease-in;
+    }
+   }
+
+   .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+
+    .item {
+      width: 33.3333%;
+      padding: 0 16px;
+      margin: 0 0 48px;
+      max-width: 618px;
+      position: relative;
+
+      &.new {
+        .sticker-new {
+          display: block;
+        }
+      }
+
+      &.promotion {
+        .sticker-promotion {
+          display: block;
+        }
+      }
+
+      &.hit-sales {
+        .sticker-hit-sales{
+          display: block;
+        }
+      }
+      
+      .link {
+        display: block;
+        transition: all 0.2s ease-in;
+        &:hover {
+          @include media ('>=1024px') {
+            transform: translateY(-25px);
+
+            .tab-sub-title {
+              background-color: $green;
+            }
+            .text,
+            .price {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .tab-img {
+        position: relative;
+    
+        .stickers {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          position: absolute;
+          top: 4px;
+          left: 0;
+        }
+       }
+    }
+   }
+
+   .sticker-hit-sales,
+   .sticker-promotion,
+   .sticker-new {
+      display: none;
+      padding: 4px 16px;
+      margin: 4px 0 0;
+      font: 700 18px/1.25 $base-font-family-sans-serif;
+      text-transform: uppercase;
+      color: $white;
+   }
+
+   .sticker-hit-sales,
+   .sticker-new {
+     background-color: $main-black;
+   }
+
+   .sticker-promotion {
+    background-color: $red;
+   }
 
 }

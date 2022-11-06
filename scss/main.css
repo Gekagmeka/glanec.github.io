@@ -136,7 +136,11 @@ h3 {
 }
 
 h4 {
-  font-size: 36px;
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
 }
 
 p {
@@ -1207,6 +1211,10 @@ body {
   text-align: center;
 }
 
+.tabs {
+  padding: 48px 0 0;
+}
+
 .tabs input[type="radio"] {
   display: none;
 }
@@ -1265,5 +1273,126 @@ body {
 .tabs #tab-btn-5:checked ~ .tabs-content #content-5,
 .tabs #tab-btn-6:checked ~ .tabs-content #content-6 {
   display: block;
+}
+
+.tabs .tabs-content {
+  padding-top: 80px;
+}
+
+.tabs .tab-sub-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 16px;
+  color: #1E2E36;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.tabs .tab-sub-title .text {
+  font-size: 24px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.tabs .tab-sub-title .price {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.tabs .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.tabs .list .item {
+  width: 33.3333%;
+  padding: 0 16px;
+  margin: 0 0 48px;
+  max-width: 618px;
+  position: relative;
+}
+
+.tabs .list .item.new .sticker-new {
+  display: block;
+}
+
+.tabs .list .item.promotion .sticker-promotion {
+  display: block;
+}
+
+.tabs .list .item.hit-sales .sticker-hit-sales {
+  display: block;
+}
+
+.tabs .list .item .link {
+  display: block;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+@media (min-width: 1024px) {
+  .tabs .list .item .link:hover {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  .tabs .list .item .link:hover .tab-sub-title {
+    background-color: #44C697;
+  }
+  .tabs .list .item .link:hover .text,
+  .tabs .list .item .link:hover .price {
+    color: #fff;
+  }
+}
+
+.tabs .list .item .tab-img {
+  position: relative;
+}
+
+.tabs .list .item .tab-img .stickers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.tabs .sticker-hit-sales,
+.tabs .sticker-promotion,
+.tabs .sticker-new {
+  display: none;
+  padding: 4px 16px;
+  margin: 4px 0 0;
+  font: 700 18px/1.25 "Proxima Nova", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.tabs .sticker-hit-sales,
+.tabs .sticker-new {
+  background-color: #1E2E36;
+}
+
+.tabs .sticker-promotion {
+  background-color: #FF1B1B;
 }
 /*# sourceMappingURL=main.css.map */
