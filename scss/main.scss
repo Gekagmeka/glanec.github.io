@@ -96,6 +96,9 @@ body{
 		width: 24px;
 		height: 24px;
 		margin-right: 4px;
+     svg {
+      fill: none;
+     }
 	}
 
   &.trash {
@@ -1283,4 +1286,164 @@ body{
     }
   }
 
+}
+
+//footer
+.footer {
+  padding: 96px 0 0;
+
+  .flex-content {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    @include media ('<=1900px') {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .logo {
+    display: inline-flex;
+  }
+
+  .ico {
+    margin-right: 4px;
+  }
+
+  .map,
+  .calendar,
+  .telephone {
+    width: 24px;
+    height: 24px;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  .lists {
+    display: flex;
+
+    .list {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-right: 56px;
+      .item {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 16px;
+  
+        &::before {
+          content: '';
+          position: absolute;
+          top: 12px;
+          left: 0;
+          width: 16px;
+          height: 2px;
+          background-color: $green;
+        }
+      }
+  
+      .link {
+        font-size: 18px;
+        font-weight: 700;
+        white-space: nowrap;
+        text-transform: uppercase;
+        color: $white;
+      }
+    }
+  }  
+
+  .contact-row {
+    margin-bottom: 16px;
+
+    @include media ('<=1900px') {
+      text-align: left;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .row-link {
+    display: inline-flex;
+    font-size: 18px;
+    font-weight: 400;
+    color: $white;
+
+    &.tel-link {
+      color: $green;
+    }
+      span {
+        display: inline-block;
+      }
+  }
+
+  .contact {
+    width: 230px;
+  }
+
+  .nav-block {
+    margin-top: 48px;
+    display: flex;
+
+    @include media ('<=1900px') {
+      justify-content: center;
+    }
+  }
+
+  .image-block {
+    width: 56.7%;
+    max-width: 1089px;
+    background-color: $main-black;
+
+    @include media ('<=1900px') {
+      width: 100%;
+      max-width: inherit;
+      display: flex;
+      justify-content: center;
+      padding: 48px 0 0;
+    }
+  }
+
+  .info-block {
+    padding: 48px;
+    width: 43.3%;
+    max-width: 831px;
+    background-color: $main-black;
+
+    @include media ('<=1900px') {
+      width: 100%;
+      max-width: inherit;
+      text-align: center;
+    }
+  }
+
+  .socials-block {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 0;
+    .text {
+      font-weight: 400;
+      color: $white;
+      margin-bottom: 8px;
+    }
+
+    .item {
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .ico {
+      margin: 0;
+      &:hover {
+        svg {
+          fill: $green;
+        }
+      }
+      svg {
+        fill: $white;
+      }
+    }
+  }
 }
